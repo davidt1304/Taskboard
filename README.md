@@ -51,15 +51,16 @@ git push -u origin main
 
 La sync utilise un **GitHub Gist privé** comme stockage. Vos données restent chez GitHub, sous votre contrôle.
 
-### 2.1. Créer un Personal Access Token
+### 2.1. Créer un Personal Access Token (classic)
 
-1. Aller sur https://github.com/settings/tokens?type=beta
-2. **Generate new token** (Fine-grained)
-3. Nom : `TaskBoard Sync`
-4. Expiration : choisir selon votre préférence
-5. Permissions : **Account permissions** → **Gists** → **Read and write**
-6. Cliquer **Generate token**
-7. **Copier le token** (il ne sera plus visible)
+> **Pourquoi un token classique ?** L'API Gist n'est pas entièrement couverte par les fine-grained tokens. Le token classique avec le seul scope `gist` est la méthode fiable.
+
+1. Aller sur https://github.com/settings/tokens/new
+2. **Note** : `TaskBoard Sync`
+3. **Expiration** : choisir selon votre préférence (90 jours recommandé, renouvelable)
+4. **Select scopes** : cocher uniquement **gist** (Create gists)
+5. Cliquer **Generate token**
+6. **Copier le token** (il commence par `ghp_` et ne sera plus visible)
 
 ### 2.2. Configurer dans l'app
 
